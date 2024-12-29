@@ -5,22 +5,24 @@ import java.util.Scanner;
 
 public class Calculator {
     //Instance Variables
-    private static final String CALCULATION_KEY = "Use + for addition and - for"
-    + " substration\nUse * for multiplication and / for division\nUse , to "
-    + "denote fractions and ^ for exponentation";
+    private static final String CALCULATION_KEY = "Type + - * / () ^ ! for "
+    + " their typical calculations.\nType , to denote a fraction\nType quit at " 
+    + "any time to exit the program. Type help to view this menu again.";
 
     public static void main(String args[]) {
         Scanner myScanner = new Scanner(System.in);
-        System.out.println("Welcome to Calculator!");
+        System.out.println("Welcome to Typing Calculator!");
         System.out.println(CALCULATION_KEY);
         boolean contin = true;
-        int numOfCalculations = 0;
+        int numOfCalculations = 1;
         String calculation;
         while (contin) {
-            System.out.println("Calculation number " + numOfCalculations + ":");
+            System.out.print("Calculation " + numOfCalculations + ": ");
             calculation = myScanner.nextLine();
-            if (calculation.equals("quit")); {
+            if (calculation.equals("quit")) {
                 contin = false;
+            } else if (calculation.equals("help")) {
+                System.out.println(CALCULATION_KEY);
             }
             numOfCalculations++;
         }
